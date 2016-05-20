@@ -1,0 +1,15 @@
+version: '2'
+services:
+    jhipsterplayground-app:
+        image: jhipsterplayground
+        external_links:
+            - jhipsterplayground-elasticsearch:elasticsearch
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=elasticsearch:9300
+        ports:
+            - 8080:8080
+    jhipsterplayground-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: jhipsterplayground-elasticsearch

@@ -67,6 +67,7 @@
     <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
     <script src="bower_components/sockjs-client/dist/sockjs.js"></script>
     <script src="bower_components/stomp-websocket/lib/stomp.min.js"></script>
+    <script src="bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -74,10 +75,10 @@
     <!-- inject:js -->
     <script src="app/app.module.js"></script>
     <script src="app/account/social/directive/social.directive.js"></script>
-    <script src="app/account/reset/finish/reset.finish.state.js"></script>
-    <script src="app/account/reset/finish/reset.finish.controller.js"></script>
     <script src="app/account/reset/request/reset.request.state.js"></script>
     <script src="app/account/reset/request/reset.request.controller.js"></script>
+    <script src="app/account/reset/finish/reset.finish.state.js"></script>
+    <script src="app/account/reset/finish/reset.finish.controller.js"></script>
     <script src="app/services/user/user.service.js"></script>
     <script src="app/services/auth/register.service.js"></script>
     <script src="app/services/auth/principal.service.js"></script>
@@ -120,9 +121,15 @@
     <script src="app/components/alert/alert.service.js"></script>
     <script src="app/components/alert/alert.directive.js"></script>
     <script src="app/components/alert/alert-error.directive.js"></script>
+    <script src="app/entities/refresh-token/refresh-token.state.js"></script>
+    <script src="app/entities/refresh-token/refresh-token.service.js"></script>
+    <script src="app/entities/refresh-token/refresh-token.search.service.js"></script>
+    <script src="app/entities/refresh-token/refresh-token.controller.js"></script>
+    <script src="app/entities/refresh-token/refresh-token-dialog.controller.js"></script>
+    <script src="app/entities/refresh-token/refresh-token-detail.controller.js"></script>
+    <script src="app/entities/refresh-token/refresh-token-delete-dialog.controller.js"></script>
     <script src="app/blocks/interceptor/notification.interceptor.js"></script>
     <script src="app/blocks/interceptor/errorhandler.interceptor.js"></script>
-    <script src="app/blocks/interceptor/auth.interceptor.js"></script>
     <script src="app/blocks/interceptor/auth-expired.interceptor.js"></script>
     <script src="app/blocks/handlers/translation.handler.js"></script>
     <script src="app/blocks/handlers/state.handler.js"></script>

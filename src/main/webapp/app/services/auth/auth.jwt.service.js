@@ -10,10 +10,12 @@
     function AuthServerProvider ($http, $localStorage, $sessionStorage, $q) {
         var service = {
             getToken: getToken,
+            getRefreshToken: getRefreshToken,
             hasValidToken: hasValidToken,
             login: login,
             loginWithToken: loginWithToken,
             storeAuthenticationToken: storeAuthenticationToken,
+            storeRefreshToken: storeRefreshToken,
             logout: logout
         };
 
@@ -21,6 +23,10 @@
 
         function getToken () {
             return $localStorage.authenticationToken || $sessionStorage.authenticationToken;
+        }
+
+        function getRefreshToken () {
+            return $localStorage.refreshToken || $sessionStorage.refreshToken;
         }
 
         function hasValidToken () {
@@ -40,7 +46,10 @@
                 var bearerToken = headers('Authorization');
                 if (angular.isDefined(bearerToken) && bearerToken.slice(0, 7) === 'Bearer ') {
                     var jwt = bearerToken.slice(7, bearerToken.length);
-                    service.storeAuthenticationToken(jwt, credentials.rememberMe);
+                    service.storeAuthenticationToken(jwt, false);
+
+                    var refreshToken = headers('refresh_token');
+                    service.storeRefreshToken(refreshToken, credentials.rememberMe);
                     return jwt;
                 }
             }
@@ -68,9 +77,20 @@
             }
         }
 
+        function storeRefreshToken(jwt, rememberMe) {
+            if(rememberMe){
+                $localStorage.refreshToken = jwt;
+            } else {
+                $sessionStorage.refreshToken = jwt;
+            }
+        }
+
         function logout () {
             delete $localStorage.authenticationToken;
             delete $sessionStorage.authenticationToken;
+            
+            delete $localStorage.refreshToken;
+            delete $sessionStorage.refreshToken;
         }
     }
 })();

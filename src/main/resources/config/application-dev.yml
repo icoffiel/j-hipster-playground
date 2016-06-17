@@ -81,3 +81,10 @@ jhipster:
             host: localhost
             port: 5000
             queueSize: 512
+    security:
+            authentication:
+                jwt:
+                    # Token is valid 15 minutes for testing purposes
+                    tokenValidityInSeconds: 900
+                    # Refresh Token is valid 30 minutes for testing purposes
+                    tokenValidityInSecondsForRememberMe: 1800

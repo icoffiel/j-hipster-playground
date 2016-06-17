@@ -11,6 +11,10 @@ public class JWTConfigurer extends SecurityConfigurerAdapter<DefaultSecurityFilt
 
     public final static String AUTHORIZATION_TOKEN = "access_token";
 
+    public static final String REFRESH_TOKEN_HEADER = "refresh_token";
+
+    public static final String AUTHORIZATION_BEARER_HEADER = "Bearer ";
+
     private TokenProvider tokenProvider;
 
     public JWTConfigurer(TokenProvider tokenProvider) {

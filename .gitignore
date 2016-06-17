@@ -3,6 +3,7 @@
 ######################
 /src/main/webapp/content/css/main.css
 /build/www/**
+/src/main/webapp/bower_components
 
 ######################
 # Node

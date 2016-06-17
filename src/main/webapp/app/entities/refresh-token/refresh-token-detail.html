@@ -1,0 +1,28 @@
+
+<div>
+    <h2><span translate="jHipsterPlaygroundApp.refreshToken.detail.title">RefreshToken</span> {{vm.refreshToken.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="jHipsterPlaygroundApp.refreshToken.token">Token</dt></dt>
+        <dd>
+            <span>{{vm.refreshToken.token}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="jHipsterPlaygroundApp.refreshToken.expired">Expired</dt></dt>
+        <dd>
+            <span>{{vm.refreshToken.expired}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="jHipsterPlaygroundApp.refreshToken.user">user</span></dt>
+        <dd>
+            {{vm.refreshToken.userEmail}}
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

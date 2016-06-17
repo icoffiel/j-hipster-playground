@@ -1,0 +1,24 @@
+{
+    "jHipsterPlaygroundApp": {
+        "refreshToken" : {
+            "home": {
+                "title": "RefreshTokens",
+                "createLabel": "Create a new RefreshToken",
+                "createOrEditLabel": "Create or edit a RefreshToken",
+                "search": "Search for RefreshToken"
+            },
+            "created": "A new RefreshToken is created with identifier {{ param }}",
+            "updated": "A RefreshToken is updated with identifier {{ param }}",
+            "deleted": "A RefreshToken is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete RefreshToken {{ id }}?"
+            },
+            "detail": {
+                "title": "RefreshToken"
+            },
+            "token": "Token",
+            "expired": "Expired",
+            "user": "User"
+        }
+    }
+}

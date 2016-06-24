@@ -89,7 +89,7 @@ public class TokenProvider {
 
     public boolean validateToken(String authToken) {
         try {
-            Jwts.parser().setSigningKey(secretKey).parseClaimsJws(authToken);
+            Jwts.parser().setSigningKey(secretKey).parseClaimsJws(authToken).getBody();
             return true;
         } catch (SignatureException e) {
             log.info("Invalid JWT signature: " + e.getMessage());
@@ -104,7 +104,6 @@ public class TokenProvider {
      * @return true if a new token can be issued, otherwise false.
      */
     public boolean canNewTokenBeIssued(String token) {
-        // TODO - Check against the saved tokens for the user to determine if a token can be sent
         boolean canNewTokenBeIssued = false;
 
         try {
